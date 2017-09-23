@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07B70C151F76E1F4005B60F1 /* ShelfView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B70C121F76D613005B60F1 /* ShelfView.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -28,12 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07B70C121F76D613005B60F1 /* ShelfView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShelfView.framework; path = "../../../Library/Developer/Xcode/DerivedData/ShelfView-gntmofsaocpphqbzmctlugbygrql/Build/Products/Debug-iphonesimulator/ShelfView/ShelfView.framework"; sourceTree = "<group>"; };
 		0A9765D306CCF9D17F0910D6 /* Pods_ShelfView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShelfView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AF892A3F21A78EC3FF3348F /* ShelfView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ShelfView.podspec; path = ../ShelfView.podspec; sourceTree = "<group>"; };
+		0AF892A3F21A78EC3FF3348F /* ShelfView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ShelfView.podspec; path = ../ShelfView.podspec; sourceTree = "<group>"; };
 		1F8551EAF5915EA209231457 /* Pods_ShelfView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShelfView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB356FC702C44EE95B955EB /* Pods-ShelfView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShelfView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShelfView_Example/Pods-ShelfView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		379FA4752B5FA86899D82853 /* Pods-ShelfView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShelfView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShelfView_Tests/Pods-ShelfView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		3AC295C7C5B869BD70D8C948 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3AC295C7C5B869BD70D8C948 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4A7F199FDC8369BDC49D3673 /* Pods-ShelfView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShelfView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShelfView_Tests/Pods-ShelfView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ShelfView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShelfView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		9779085D8D49DB700C8D91F0 /* Pods-ShelfView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShelfView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShelfView_Example/Pods-ShelfView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		E60C9E233DC96B99B9AA8021 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E60C9E233DC96B99B9AA8021 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B70C151F76E1F4005B60F1 /* ShelfView.framework in Frameworks */,
 				6379AD8906A9CBF0F5979658 /* Pods_ShelfView_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +75,7 @@
 		3A8900A62FB1C6EE2C0D4AE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07B70C121F76D613005B60F1 /* ShelfView.framework */,
 				1F8551EAF5915EA209231457 /* Pods_ShelfView_Example.framework */,
 				0A9765D306CCF9D17F0910D6 /* Pods_ShelfView_Tests.framework */,
 			);
@@ -215,6 +219,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = MDCJGSLNV9;
 						LastSwiftMigration = 0820;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -443,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -483,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -496,12 +501,14 @@
 			baseConfigurationReference = 9779085D8D49DB700C8D91F0 /* Pods-ShelfView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MDCJGSLNV9;
 				INFOPLIST_FILE = ShelfView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdscientist.ShelfView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -510,12 +517,14 @@
 			baseConfigurationReference = 1FB356FC702C44EE95B955EB /* Pods-ShelfView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MDCJGSLNV9;
 				INFOPLIST_FILE = ShelfView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdscientist.ShelfView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
