@@ -56,20 +56,20 @@ print("I just clicked \(bookTitle) with bookId \(bookId) @ position \(position)"
 ```
 
 
-** Updating ShelfView data **
+**Updating ShelfView data**
 ```
 bookModel.append(BookModel.init(bookCoverSource: "https://www.packtpub.com/sites/default/files/9781785288197.png", bookId: "1", bookTitle: "Learning iOS UI Development"))
 shelfView.updateData(bookModel: self.bookModel)
 ```
 
 
-** Resizing ShelfView **
+**Resizing ShelfView**
 ```
 shelfView.resize(width: 647, height: 370, bookModel: self.bookModel)
 ```
 
 
-** Loading book covers from other sources **
+**Loading book covers from other sources**
 
 * iPhone/iPad document directory
 ```
