@@ -73,7 +73,7 @@ shelfView.resize(width: 647, height: 370, bookModel: self.bookModel)
 
 * iPhone/iPad document directory
 ```
-bookModel.append(BookModel.init(bookCoverSource: "http://www.aidanf.net/images/learn-swift/cover-web.png", bookId: "0", bookTitle: "Learn Swift"))          
+bookModel.append(BookModel.init(bookCoverSource: "bookCover.png", bookId: "0", bookTitle: "Learn Swift"))          
 shelfView.loadData(bookModel: bookModel, bookSource: ShelfView.BOOK_SOURCE_DEVICE_DOCUMENTS)
 ``` 
 
@@ -81,7 +81,7 @@ shelfView.loadData(bookModel: bookModel, bookSource: ShelfView.BOOK_SOURCE_DEVIC
 
 * iPhone/iPad library directory
 ```
-bookModel.append(BookModel.init(bookCoverSource: "http://www.aidanf.net/images/learn-swift/cover-web.png", bookId: "0", bookTitle: "Learn Swift"))          
+bookModel.append(BookModel.init(bookCoverSource: "bookCover.png", bookId: "0", bookTitle: "Learn Swift"))          
 shelfView.loadData(bookModel: bookModel, bookSource: ShelfView.BOOK_SOURCE_DEVICE_LIBRARY)
 ```
 
@@ -89,13 +89,13 @@ shelfView.loadData(bookModel: bookModel, bookSource: ShelfView.BOOK_SOURCE_DEVIC
 
 * iPhone/iPad cache directory
 ```
-bookModel.append(BookModel.init(bookCoverSource: "http://www.aidanf.net/images/learn-swift/cover-web.png", bookId: "0", bookTitle: "Learn Swift"))          
+bookModel.append(BookModel.init(bookCoverSource: "bookCover.png", bookId: "0", bookTitle: "Learn Swift"))          
 shelfView.loadData(bookModel: bookModel, bookSource: ShelfView.BOOK_SOURCE_DEVICE_CACHE)
 ``` 
 
 * Directly from your project's source code
 ```
-bookModel.append(BookModel.init(bookCoverSource: "http://www.aidanf.net/images/learn-swift/cover-web.png", bookId: "0", bookTitle: "Learn Swift"))          
+bookModel.append(BookModel.init(bookCoverSource: "bookCover.png", bookId: "0", bookTitle: "Learn Swift"))          
 shelfView.loadData(bookModel: bookModel, bookSource: ShelfView.BOOK_SOURCE_RAW)
 ``` 
 
