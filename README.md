@@ -23,6 +23,14 @@ it, simply add the following line to your Podfile:
 pod 'ShelfView'
 ```
 
+
+**Note**
+--------
+Because of book covers whose URLs are `http`, update your `info.plist` as follows
+* add `App Transport Security Settings` to the list
+* add `Allow Arbitrary Loads` to the security settings added above; set it to `YES`.
+<img src="note.png" width="550">
+
 Example 
 --------
 
