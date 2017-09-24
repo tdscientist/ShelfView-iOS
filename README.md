@@ -1,6 +1,6 @@
 ## ShelfView (iOS) ##
 
-*iOS custom view to display books on shelf*
+*iOS custom view to display books on shelf* `     ` **([Android version is available here](https://github.com/tdscientist/ShelfView))** 
 
 <img src="iphone.png" width="340"> <img src="ipad.png" width="528">
 
