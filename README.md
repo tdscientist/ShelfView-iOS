@@ -16,7 +16,7 @@ Requirements
 Installation
 --------
 
-ShelfView is available through [CocoaPods](http://cocoapods.org). To install
+ShelfView is available through [CocoaPods](https://cocoapods.org/). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
@@ -99,8 +99,6 @@ bookModel.append(BookModel.init(bookCoverSource: "bookCover.png", bookId: "0", b
 shelfView.loadData(bookModel: bookModel, bookSource: ShelfView.BOOK_SOURCE_RAW)
 ``` 
 
------
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 License
 --------
