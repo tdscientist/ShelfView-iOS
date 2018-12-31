@@ -7,8 +7,8 @@
 Requirements
 --------
 
-* iOS 8.0+
-* Swift 3
+* iOS 10.0+
+* Swift 4.2
 
 
 Installation
@@ -31,58 +31,89 @@ Because of book covers whose URLs are `http`, update your `info.plist` as follow
 
 <img src="note.png" width="550">
 
-Example 
+Plain Shelf
 --------
 
 ```swift
 import ShelfView
 
-class ViewController: UIViewController, ShelfViewDelegate {
-
-var shelfView:ShelfView!
-var bookModel = [BookModel] ()
+class PlainShelfController: UIViewController, PlainShelfViewDelegate {
+var shelfView: PlainShelfView!
 
 override func viewDidLoad() {
+super.viewDidLoad()
 
-  super.viewDidLoad()
+let books = [
+BookModel(bookCoverSource: "https://files.kerching.raywenderlich.com/covers/d5693015-46b6-44f8-bf7b-7a222b28d9fe.png", bookId: "0", bookTitle: "Realm: Building Modern Swift Apps with Realm"),
+BookModel(bookCoverSource: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYEkCQ_wu8HoGJzzs_gUH_FVusgI2RhntBKQ-WkmqnDJZnriwY6Q", bookId: "1", bookTitle: "iOS 10 by Tutorials: Learning the new iOS APIs with Swift 3")
+]        
 
-  shelfView = ShelfView(frame: CGRect(x: 0, y: 0, width: 375, height: 647))        
-  bookModel.append(
-    BookModel.init(bookCoverSource: "http://www.aidanf.net/images/learn-swift/cover-web.png", 
-    bookId: "0", 
-    bookTitle: "Learn Swift"))
-  
-  shelfView.loadData(bookModel: bookModel, 
-    bookSource: ShelfView.BOOK_SOURCE_URL)       
+shelfView = PlainShelfView(frame: CGRect(x: 0, y: 0, width: 350, height: 500), bookModel: books, bookSource: PlainShelfView.BOOK_SOURCE_URL)
 
-  shelfView.delegate = self        
-  self.view.addSubview(shelfView)
+shelfView.delegate = self
+self.view.addSubview(shelfView)
 }
 
-func onBookClicked(_ shelfView: ShelfView, position: Int, bookId: String, bookTitle: String) {
-  print("I just clicked \(bookTitle) with bookId \(bookId) @ position \(position)")
+func onBookClicked(_ shelfView: PlainShelfView, index: Int, bookId: String, bookTitle: String) {
+print("I just clicked \"\(bookTitle)\" with bookId \(bookId), at index \(index)")
 }
 
 }
 ```
 
 
-**Updating ShelfView data**
+
+Section Shelf
+--------
 
 ```swift
-bookModel.append(
-  BookModel.init(bookCoverSource: "https://www.packtpub.com/sites/default/files/9781785288197.png", 
-  bookId: "1", 
-  bookTitle: "Learning iOS UI Development"))
-shelfView.updateData(bookModel: self.bookModel)
+import ShelfView
+
+class SectionShelfController: UIViewController, SectionShelfViewDelegate {
+var shelfView: SectionShelfView!
+
+override func viewDidLoad() {
+super.viewDidLoad()
+
+let books = [
+BookModel(bookCoverSource: "https://files.kerching.raywenderlich.com/covers/d5693015-46b6-44f8-bf7b-7a222b28d9fe.png", bookId: "0", bookTitle: "Realm: Building Modern Swift Apps with Realm"),
+BookModel(bookCoverSource: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYEkCQ_wu8HoGJzzs_gUH_FVusgI2RhntBKQ-WkmqnDJZnriwY6Q", bookId: "1", bookTitle: "iOS 10 by Tutorials: Learning the new iOS APIs with Swift 3")
+]
+let bookModelSectionArray = [BookModelSection(sectionName: "RAYWENDERLICH", sectionId: "0", sectionBooks: books)]
+
+shelfView = SectionShelfView(frame: CGRect(x: 0, y: 0, width: 350, height: 500), bookModelSection: bookModelSectionArray, bookSource: SectionShelfView.BOOK_SOURCE_URL)
+
+shelfView.delegate = self
+self.view.addSubview(shelfView)
+}
+
+func onBookClicked(_ shelfView: SectionShelfView, section: Int, index: Int, sectionId: String, sectionTitle: String, bookId: String, bookTitle: String) {
+print("I just clicked \"\(bookTitle)\" with bookId \(bookId), at index \(index). Section details --> section \(section), sectionId \(sectionId), sectionTitle \(sectionTitle)")
+}
+
+}
 ```
 
-
-**Resizing ShelfView**
-
+**Add more books to ShelfView**
+* Plain Shelf
 ```swift
-shelfView.resize(width: 647, height: 370, bookModel: self.bookModel)
+addBooks(bookModel: [BookModel])
 ```
+* Section Shelf
+```swift
+addBooks(bookModelSection: [BookModelSection])
+```
+
+**Reload books on ShelfView**
+* Plain Shelf
+```swift
+reloadBooks(bookModel: [BookModel])
+```
+* Section Shelf
+```swift
+reloadBooks(bookModelSection: [BookModelSection])
+```
+
 
 
 **Loading book covers from other sources**
@@ -90,13 +121,11 @@ shelfView.resize(width: 647, height: 370, bookModel: self.bookModel)
 * iPhone/iPad document directory
 
 ```swift
-bookModel.append(
-  BookModel.init(bookCoverSource: "bookCover.png", 
-  bookId: "0", 
-  bookTitle: "Learn Swift"))
-  
-shelfView.loadData(bookModel: bookModel, 
-  bookSource: ShelfView.BOOK_SOURCE_DEVICE_DOCUMENTS)
+let books = [
+BookModel(bookCoverSource: "bookcover0.png", bookId: "0", bookTitle: "Book Title 0"),
+BookModel(bookCoverSource: "bookcover1.png", bookId: "1", bookTitle: "Book Title 1")
+]
+shelfView = PlainShelfView(frame: CGRect(x: 0, y: 0, width: 350, height: 500), bookModel: books, bookSource: PlainShelfView.BOOK_SOURCE_DEVICE_DOCUMENTS)
 ``` 
 
 
@@ -104,37 +133,31 @@ shelfView.loadData(bookModel: bookModel,
 * iPhone/iPad library directory
 
 ```swift
-bookModel.append(
-  BookModel.init(bookCoverSource: "bookCover.png", 
-  bookId: "0", 
-  bookTitle: "Learn Swift"))      
-  
-shelfView.loadData(bookModel: bookModel, 
-  bookSource: ShelfView.BOOK_SOURCE_DEVICE_LIBRARY)
+let books = [
+BookModel(bookCoverSource: "bookcover0.png", bookId: "0", bookTitle: "Book Title 0"),
+BookModel(bookCoverSource: "bookcover1.png", bookId: "1", bookTitle: "Book Title 1")
+]
+shelfView = PlainShelfView(frame: CGRect(x: 0, y: 0, width: 350, height: 500), bookModel: books, bookSource: PlainShelfView.BOOK_SOURCE_DEVICE_LIBRARY)
 ```
 
 * iPhone/iPad cache directory
 
 ```swift
-bookModel.append(
-  BookModel.init(bookCoverSource: "bookCover.png", 
-  bookId: "0", 
-  bookTitle: "Learn Swift"))
-  
-shelfView.loadData(bookModel: bookModel, 
-  bookSource: ShelfView.BOOK_SOURCE_DEVICE_CACHE)
+let books = [
+BookModel(bookCoverSource: "bookcover0.png", bookId: "0", bookTitle: "Book Title 0"),
+BookModel(bookCoverSource: "bookcover1.png", bookId: "1", bookTitle: "Book Title 1")
+]
+shelfView = PlainShelfView(frame: CGRect(x: 0, y: 0, width: 350, height: 500), bookModel: books, bookSource: PlainShelfView.BOOK_SOURCE_DEVICE_CACHE)
 ``` 
 
 * Directly from your project's source code
 
 ```swift
-bookModel.append(
-  BookModel.init(bookCoverSource: "bookCover.png", 
-  bookId: "0", 
-  bookTitle: "Learn Swift"))
-  
-shelfView.loadData(bookModel: bookModel, 
-  bookSource: ShelfView.BOOK_SOURCE_RAW)
+let books = [
+BookModel(bookCoverSource: "bookcover0.png", bookId: "0", bookTitle: "Book Title 0"),
+BookModel(bookCoverSource: "bookcover1.png", bookId: "1", bookTitle: "Book Title 1")
+]
+shelfView = PlainShelfView(frame: CGRect(x: 0, y: 0, width: 350, height: 500), bookModel: books, bookSource: PlainShelfView.BOOK_SOURCE_RAW)
 ``` 
 
 

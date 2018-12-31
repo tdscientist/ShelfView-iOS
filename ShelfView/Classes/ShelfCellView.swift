@@ -6,25 +6,22 @@
 //  Copyright © 2017 Adeyinka Adediji. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class ShelfCellView: UICollectionViewCell {
-    
     let shelfBackground = UIImageView()
     let bookBackground = UIView()
-    let bookCover = UIImageView()
+    var bookCover = UIImageView()
     let indicator = UIActivityIndicatorView()
     let spine = UIImageView()
     
-    override  init(frame: CGRect) {
-        
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         addSubview(shelfBackground)
         addSubview(bookBackground)
         
-        bookBackground.addSubview(bookCover)  
+        bookBackground.addSubview(bookCover)
         bookBackground.addSubview(spine)
         bookBackground.addSubview(indicator)
         
@@ -38,12 +35,13 @@ class ShelfCellView: UICollectionViewCell {
         spine.isHidden = true
         shelfBackground.isUserInteractionEnabled = true
         bookCover.isUserInteractionEnabled = true
-        
-    }   
-    
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    static var identifier: String {
+        return String(describing: self)
+    }
 }

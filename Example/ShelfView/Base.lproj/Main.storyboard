@@ -1,25 +1,94 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nRG-gF-aJi">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--PLAIN SHELF-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
+                <viewController id="vXZ-lx-hvc" customClass="PlainShelfController" customModule="ShelfView_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BR-Ei-jMp">
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8BR-Ei-jMp" firstAttribute="top" secondItem="lJE-At-Wyd" secondAttribute="top" id="4CO-Jk-hAe"/>
+                            <constraint firstItem="lJE-At-Wyd" firstAttribute="trailing" secondItem="8BR-Ei-jMp" secondAttribute="trailing" id="5qb-JU-j3W"/>
+                            <constraint firstItem="8BR-Ei-jMp" firstAttribute="leading" secondItem="lJE-At-Wyd" secondAttribute="leading" id="eml-9x-CwB"/>
+                            <constraint firstItem="lJE-At-Wyd" firstAttribute="bottom" secondItem="8BR-Ei-jMp" secondAttribute="bottom" id="q3P-UN-C0R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lJE-At-Wyd"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="PLAIN SHELF" id="Mii-ya-OIh"/>
+                    <connections>
+                        <outlet property="motherView" destination="8BR-Ei-jMp" id="Vgi-a7-JcV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="7" y="16"/>
+        </scene>
+        <!--SECTION SHELF-->
+        <scene sceneID="Cws-A2-G6d">
+            <objects>
+                <viewController id="I1d-Co-GNY" customClass="SectionShelfController" customModule="ShelfView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aoc-g3-kKc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6g-MF-HpH">
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="myv-L8-CwT" firstAttribute="bottom" secondItem="j6g-MF-HpH" secondAttribute="bottom" id="Gnk-Eg-mgF"/>
+                            <constraint firstItem="myv-L8-CwT" firstAttribute="trailing" secondItem="j6g-MF-HpH" secondAttribute="trailing" id="nx3-gg-aD4"/>
+                            <constraint firstItem="j6g-MF-HpH" firstAttribute="leading" secondItem="myv-L8-CwT" secondAttribute="leading" id="qbq-hx-Ydc"/>
+                            <constraint firstItem="j6g-MF-HpH" firstAttribute="top" secondItem="myv-L8-CwT" secondAttribute="top" id="y4o-6r-uej"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="myv-L8-CwT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SECTION SHELF" id="FpG-2i-H9L"/>
+                    <connections>
+                        <outlet property="motherView" destination="j6g-MF-HpH" id="B9J-7k-8hk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGX-0f-L5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="16"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="gbp-Nh-pYT">
+            <objects>
+                <tabBarController id="nRG-gF-aJi" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dcs-rS-TMs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="I2a-Nq-6mS"/>
+                        <segue destination="I1d-Co-GNY" kind="relationship" relationship="viewControllers" id="Eia-Gv-7zJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JGU-sO-Tq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-660" y="16"/>
         </scene>
     </scenes>
 </document>

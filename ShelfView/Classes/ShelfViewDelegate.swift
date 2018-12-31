@@ -8,6 +8,10 @@
 
 import Foundation
 
-public protocol ShelfViewDelegate: class {
-    func  onBookClicked(_ shelfView: ShelfView, position: Int, bookId: String, bookTitle: String)
+public protocol PlainShelfViewDelegate: class {
+    func onBookClicked(_ shelfView: PlainShelfView, index: Int, bookId: String, bookTitle: String)
+}
+
+public protocol SectionShelfViewDelegate: class {
+    func onBookClicked(_ shelfView: SectionShelfView, section: Int, index: Int, sectionId: String, sectionTitle: String, bookId: String, bookTitle: String)
 }

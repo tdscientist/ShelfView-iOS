@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ShelfView'
-  s.version          = '1.0'
+  s.version          = '1.1'
   s.summary          = 'iOS custom view to display books on shelf.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,8 @@ iOS custom view to display books on shelf, mimicking a real library.
   s.source           = { :git => 'https://github.com/tdscientist/ShelfView-iOS.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/tdscientist'
 
-  s.ios.deployment_target = '8.0'
+  s.swift_version = '4.2'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'ShelfView/Classes/**/*'
   
@@ -38,5 +39,5 @@ iOS custom view to display books on shelf, mimicking a real library.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  s.dependency 'Kingfisher', '~> 3.0'
+  s.dependency 'Kingfisher', '~> 5.0'
 end

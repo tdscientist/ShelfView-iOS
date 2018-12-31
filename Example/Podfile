@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'ShelfView_Example' do
-  pod 'ShelfView', :path => '../'
+    pod 'ShelfView', :path => '../'
 
   target 'ShelfView_Tests' do
     inherit! :search_paths
